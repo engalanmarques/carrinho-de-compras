@@ -12,6 +12,9 @@ function limpar (){
 	let listaProduto = document.getElementById('lista-produtos');
 	let produtoNovo = listaProduto.querySelector('.carrinho__produtos__produto');
 	produtoNovo.innerHTML = ``
+	let valorTotal = document.getElementById('valor-total');
+	valorTotal.textContent = 'R$0';
+	
 }
 
 function somaValorDeProdutosAdicionados(valor){
