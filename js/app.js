@@ -9,7 +9,9 @@ function adicionar (){
 }
 
 function limpar (){
-	let
+	let listaProduto = document.getElementById('lista-produtos');
+	let produtoNovo = listaProduto.querySelector('.carrinho__produtos__produto');
+	produtoNovo.innerHTML = ``
 }
 
 function somaValorDeProdutosAdicionados(valor){
