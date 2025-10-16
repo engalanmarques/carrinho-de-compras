@@ -5,10 +5,7 @@ function adicionar (){
 	let quantidade = parseInt(quantidadeProduto);
 	let valor = parseFloat(produtoEscolhido.match(/\d/g).join(''));
 	soma = somaValorDeProdutosAdicionados(valor * quantidade);
-	alteraListaDeProdutos(produtoEscolhido, quantidadeProduto, soma);
-	console.log(soma);
-	
-	
+	alteraListaDeProdutos(produtoEscolhido, quantidadeProduto, soma);	
 }
 
 function limpar (){
@@ -23,8 +20,13 @@ function somaValorDeProdutosAdicionados(valor){
 	
 }
 function alteraListaDeProdutos(produto, quantidade, soma){
+	let textoSeparado = produto.split('-');
+	let nomeProduto = textoSeparado[0];
+	let valor = textoSeparado[1]
 	let valorTotal = document.getElementById('valor-total');
-	console.log(soma);
 	valorTotal.textContent = `R$${soma}`;
-	//let novoProduto = document.getElementById();
+	let listaProduto = document.getElementById('lista-produtos');
+	let produtoNovo = listaProduto.querySelector('.carrinho__produtos__produto');
+	produtoNovo.innerHTML += `<br> <span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">${valor}</span>`
+	console.log(produtoNovo);
 }
